@@ -1,0 +1,56 @@
+{
+  "name": "@bulutbilisimciler/bb-theia",
+  "version": "1.1.0",
+  "private": false,
+  "theia": {
+    "target": "browser",
+    "frontend": {
+      "config": {
+        "applicationName": "Bulut Bilişimciler - Lab IDE",
+        "defaultTheme": "dark",
+        "preferences": {
+          "files.enableTrash": true
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "bulutbilisimciler-bb-theia-plugin": "1.1.0",
+    "@theia/core": "1.41.0",
+    "@theia/editor": "1.41.0",
+    "@theia/file-search": "1.41.0",
+    "@theia/messages": "1.41.0",
+    "@theia/monaco": "1.41.0",
+    "@theia/preferences": "1.41.0",
+    "@theia/terminal": "1.41.0",
+    "@theia/git": "1.41.0",
+    "@theia/scm": "1.41.0",
+    "@theia/scm-extra": "1.41.0"
+  },
+  "devDependencies": {
+    "@theia/cli": "1.41.0"
+  },
+  "scripts": {
+    "bundle": "yarn theia build",
+    "rebuild": "yarn theia rebuild",
+    "download:plugins": "yarn theia download:plugins",
+    "start": "yarn theia start --plugins=local-dir:plugins --ovsx-router-config=ovsx-router-config.json",
+    "watch": "yarn rebuild && theia build --watch --mode development"
+  },
+  "theiaPluginsDir": "plugins",
+  "theiaPlugins": {
+    "dbaeumer.vscode-eslint": "https://open-vsx.org/api/dbaeumer/vscode-eslint/2.4.2/file/dbaeumer.vscode-eslint-2.4.2.vsix",
+    "ms-vscode.js-debug": "https://open-vsx.org/api/ms-vscode/js-debug/1.78.0/file/ms-vscode.js-debug-1.78.0.vsix",
+    "ms-vscode.js-debug-companion": "https://open-vsx.org/api/ms-vscode/js-debug-companion/1.1.2/file/ms-vscode.js-debug-companion-1.1.2.vsix"
+  },
+  "theiaPluginsExcludeIds": [
+    "ms-vscode.js-debug-companion",
+    "vscode.extension-editing",
+    "vscode.git",
+    "vscode.git-base",
+    "vscode.github",
+    "vscode.github-authentication",
+    "vscode.microsoft-authentication",
+    "ms-vscode.references-view"
+  ]
+}
